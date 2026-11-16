@@ -7,10 +7,8 @@
     "photo": "images/profile.jpg",
   
     "links": {
-      "Google Scholar": "",
-      "GitHub": "",
-      "LinkedIn": "",
-      "CV": ""
+      "GitHub": "https://github.com/SanjanaYasna",
+      "LinkedIn": "https://www.linkedin.com/in/sanjana-yasna-76673b24a/"
     },
   
     "about": "Hi! I go by Teetly, and I am a first-year PhD student in Biomedical Informatics at Vanderbilt. Prior to my PhD, I worked in high-performance computing, particularly improving LLM performance in generating low-resource languages, and computational biology research along the lines of protein structure representation learning. I am currently working with Bennett Landman.",
@@ -63,7 +61,7 @@
       },
       {
         "title": "Undergrad Honors Thesis: How Well Can LLMs Generate and Translate Code to Asynchronous Many-Task Runtimes?",
-        "description": "An investigation of large language models in genrating AMT code, for both single-function and repository-scale tasks.",
+        "description": "An investigation of large language models in generating AMT code, for both single-function and repository-scale tasks.",
         "image": "images/honors-thesis.png",
         "linkLabel": "View Thesis",
         "url": "https://drive.google.com/file/d/13wiNY6Glp0e6gn9eXUMUGQnGJZjOb3pL/view?usp=sharing"
