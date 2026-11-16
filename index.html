@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academic Homepage</title>
+<style>
+  :root {
+    --link: #1772d0;
+    --text: #333;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: white;
+    color: var(--text);
+    font: 15px/1.65 Arial, Helvetica, sans-serif;
+  }
+  main {
+    max-width: 850px;
+    margin: 55px auto;
+    padding: 0 24px;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0 0 12px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin: 36px 0 15px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+  }
+  .profile-info { flex: 1; }
+  .profile-photo {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .links { margin-top: 12px; }
+  .links a { margin-right: 5px; }
+  .news { padding-left: 20px; }
+  .news li { margin: 7px 0; }
+  .publication {
+    display: flex;
+    gap: 22px;
+    margin: 25px 0;
+    align-items: flex-start;
+  }
+  .publication img {
+    width: 175px;
+    height: 115px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .publication-info { flex: 1; }
+  .paper-title { font-weight: 600; }
+  .venue { font-style: italic; }
+  .project { margin-bottom: 22px; }
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #888;
+    font-size: 12px;
+  }
+  @media (max-width: 600px) {
+    main { margin: 28px auto; }
+    .profile { flex-direction: column-reverse; }
+    .profile-info { width: 100%; text-align: center; }
+    .publication { flex-direction: column; }
+    .publication img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="profile">
+    <div class="profile-info">
+      <h1 id="name"></h1>
+      <div id="position"></div>
+      <div id="university"></div>
+      <div id="email"></div>
+      <div id="links" class="links"></div>
+    </div>
+    <img id="photo" class="profile-photo"
+         alt="Profile photo" hidden>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div id="about"></div>
+  </section>
+
+  <section>
+    <h2>News</h2>
+    <ul id="news" class="news"></ul>
+  </section>
+
+  <section>
+    <h2>Selected Publications</h2>
+    <div id="publications"></div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div id="projects"></div>
+  </section>
+
+  <footer id="footer"></footer>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function text(tag, value, className = "") {
+  const el = document.createElement(tag);
+  el.textContent = value || "";
+  if (className) el.className = className;
+  return el;
+}
+
+function link(label, url) {
+  const a = text("a", label);
+  a.href = url;
+  if (/^https?:\/\//i.test(url)) {
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  }
+  return a;
+}
+
+function addLinks(parent, items) {
+  Object.entries(items || {}).forEach(([label, url], i) => {
+    if (!url) return;
+    if (i) parent.append(" / ");
+    parent.append(link(label, url));
+  });
+}
+
+async function load() {
+  const response = await fetch("./content.json");
+  if (!response.ok) throw new Error("Cannot load content.json");
+  const data = await response.json();
+
+  document.title = data.name + " | Academic Homepage";
+  $("name").textContent = data.name;
+  $("position").textContent = data.position;
+  $("university").textContent = data.university;
+  $("email").textContent = data.email;
+  $("about").textContent = data.about;
+  $("footer").textContent = "© " + new Date().getFullYear()
+                            + " " + data.name;
+
+  if (data.photo) {
+    $("photo").src = data.photo;
+    $("photo").hidden = false;
+  }
+
+  addLinks($("links"), data.links);
+
+  (data.news || []).forEach(item => {
+    const li = document.createElement("li");
+    li.append(text("strong", item.date + " — "));
+    li.append(document.createTextNode(item.text));
+    $("news").append(li);
+  });
+
+  (data.publications || []).forEach(p => {
+    const row = text("div", "", "publication");
+
+    if (p.image) {
+      const img = document.createElement("img");
+      img.src = p.image;
+      img.alt = p.title;
+      row.append(img);
+    }
+
+    const info = text("div", "", "publication-info");
+    const title = text("div", "", "paper-title");
+    title.append(p.url ? link(p.title, p.url)
+                       : document.createTextNode(p.title));
+    info.append(title);
+    info.append(text("div", p.authors));
+    info.append(text("div", p.venue, "venue"));
+
+    const links = text("div", "", "links");
+    addLinks(links, p.links);
+    info.append(links);
+    row.append(info);
+    $("publications").append(row);
+  });
+
+  (data.projects || []).forEach(p => {
+    const box = text("div", "", "project");
+    const heading = text("strong", "");
+    heading.append(p.url ? link(p.title, p.url)
+                         : document.createTextNode(p.title));
+    box.append(heading);
+    box.append(text("p", p.description));
+    $("projects").append(box);
+  });
+}
+
+load().catch(error => {
+  console.error(error);
+  $("about").textContent =
+    "Could not load website content. Check content.json.";
+});
+</script>
+</body>
+</html>

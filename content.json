@@ -1,0 +1,44 @@
+
+{
+    "name": "Teetly",
+    "position": "PhD Student in Biomedical Informatics",
+    "university": "Vanderbilt University",
+    "email": "",
+    "photo": "images/profile.jpg",
+  
+    "links": {
+      "Google Scholar": "",
+      "GitHub": "",
+      "LinkedIn": "",
+      "CV": ""
+    },
+  
+    "about": "Hi! I go by Teetly, and I am a first-year PhD student in Biomedical Informatics at Vanderbilt University. Prior to my PhD, I worked in high-performance computing, particularly improving LLM performance in generating low-resource languages, and in computational biology research focused on protein structure representation learning.\n\nMy research interests include:\n\n1. Multimodal Representation Learning: How can we integrate imaging data with clinical notes to develop a more comprehensive patient-level understanding?\n\n2. Medical Imaging: I am currently working on causal synthesis models for dermatology.",
+  
+    "news": [
+      {
+        "date": "May 2026",
+        "text": "Gave an oral presentation on \"Evaluating LLM Generated Task Codes\" at the 31st HIPS Workshop, held at IPDPS."
+      },
+      {
+        "date": "April 2026",
+        "text": "Received the Schultz Foundation Travel Award and Lazarus Center Professional Development Fund."
+      },
+      {
+        "date": "April 2025",
+        "text": "Gave an oral presentation titled \"Fine Tuning Convergence Experiments with Large Language Models Trained on High Performance Computing Code\" at Celebrating Collaborations at Smith College."
+      },
+      {
+        "date": "March 2025",
+        "text": "Received the Barry Goldwater Scholarship."
+      },
+      {
+        "date": "August 2024",
+        "text": "Presented the poster \"Encoding Essential Features in Protein Structure for Task Generalization\" at RosettaCon."
+      }
+    ],
+  
+  
+    "projects": []
+  }
+  
