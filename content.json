@@ -13,32 +13,68 @@
       "CV": ""
     },
   
-    "about": "Hi! I go by Teetly, and I am a first-year PhD student in Biomedical Informatics at Vanderbilt University. Prior to my PhD, I worked in high-performance computing, particularly improving LLM performance in generating low-resource languages, and in computational biology research focused on protein structure representation learning.\n\nMy research interests include:\n\n1. Multimodal Representation Learning: How can we integrate imaging data with clinical notes to develop a more comprehensive patient-level understanding?\n\n2. Medical Imaging: I am currently working on causal synthesis models for dermatology.",
+    "about": "Hi! I go by Teetly, and I am a first-year PhD student in Biomedical Informatics at Vanderbilt. Prior to my PhD, I worked in high-performance computing, particularly improving LLM performance in generating low-resource languages, and computational biology research along the lines of protein structure representation learning. I am currently working with Bennett Landman.",
   
-    "news": [
+    "interests": [
       {
-        "date": "May 2026",
-        "text": "Gave an oral presentation on \"Evaluating LLM Generated Task Codes\" at the 31st HIPS Workshop, held at IPDPS."
+        "title": "Multimodal representation learning",
+        "description": "How can we integrate imaging data with clinical notes to get a patient-level understanding?"
       },
       {
-        "date": "April 2026",
-        "text": "Received the Schultz Foundation Travel Award and Lazarus Center Professional Development Fund."
-      },
-      {
-        "date": "April 2025",
-        "text": "Gave an oral presentation titled \"Fine Tuning Convergence Experiments with Large Language Models Trained on High Performance Computing Code\" at Celebrating Collaborations at Smith College."
-      },
-      {
-        "date": "March 2025",
-        "text": "Received the Barry Goldwater Scholarship."
-      },
-      {
-        "date": "August 2024",
-        "text": "Presented the poster \"Encoding Essential Features in Protein Structure for Task Generalization\" at RosettaCon."
+        "title": "Medical imaging",
+        "description": "Currently, I am working on causal synthesis models for dermatology."
       }
     ],
   
+    "news": [
+      {
+        "date": "August 2026",
+        "text": "Started my PhD at Vanderbilt!"
+      },
+      {
+        "date": "May 2026",
+        "text": "Oral presentation on paper \"Evaluating LLM Generated Task Codes\" at the 31st HIPS workshop held at IPDPS."
+      },
+      {
+        "date": "April 2026",
+        "text": "Received funding: Schultz Foundation Travel Award and Lazarus Center Professional Development Fund."
+      },
+      {
+        "date": "April 2025",
+        "text": "Presented oral presentation \"Fine Tuning Convergence Experiments with Large Language Models Trained on High Performance Computing Code\" at Celebrating Collaborations at Smith College."
+      },
+      {
+        "date": "March 2025",
+        "text": "Barry Goldwater Scholarship."
+      },
+      {
+        "date": "August 2024",
+        "text": "Presented poster \"Encoding Essential Features in Protein Structure for Task Generalization\" at RosettaCon."
+      }
+    ],
   
-    "projects": []
+    "projects": [
+      {
+        "title": "Evaluating LLM Generated Task Codes (HIPS Paper)",
+        "description": "Evaluating LLM-generated high-performance computing task codes, including runtime performance and scaling behavior across thread counts.",
+        "image": "images/hips-paper.png",
+        "linkLabel": "View Paper",
+        "url": "https://mprobson.github.io/files/ParEval_AMT_HIPS_2026.pdf"
+      },
+      {
+        "title": "Undergrad Honors Thesis: How Well Can LLMs Generate and Translate Code to Asynchronous Many-Task Runtimes?",
+        "description": "An investigation of large language models for generating and translating code to asynchronous many-task runtimes, including analysis of compilation, syntax, type, linker, and runtime errors.",
+        "image": "images/honors-thesis.png",
+        "linkLabel": "View Thesis",
+        "url": "https://drive.google.com/file/d/13wiNY6Glp0e6gn9eXUMUGQnGJZjOb3pL/view?usp=sharing"
+      },
+      {
+        "title": "Encoding Essential Features in Protein Structure for Task Generalization (Rosetta Commons Poster)",
+        "description": "Exploring protein structure representation learning using graph and point cloud encodings, with an emphasis on feature selection and generalization to downstream prediction tasks.",
+        "image": "images/rosetta-poster.png",
+        "linkLabel": "View Poster",
+        "url": "https://drive.google.com/file/d/1GDd2VDEn3lOAlsz8HPj1vmfQe2ld3fk3/view?usp=sharing"
+      }
+    ]
   }
   
