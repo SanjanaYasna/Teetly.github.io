@@ -261,10 +261,10 @@ function addLinks(parent, items) {
 }
 
 async function load() {
-  const response = await fetch("./config.json");
+  const response = await fetch("./content.json");
 
   if (!response.ok) {
-    throw new Error("Cannot load config.json");
+    throw new Error("Cannot load content.json");
   }
 
   const data = await response.json();
@@ -381,7 +381,7 @@ load().catch(error => {
   console.error(error);
 
   $("about").textContent =
-    "Could not load website content. Check config.json.";
+    "Could not load website content. Check content.json.";
 });
 </script>
 
