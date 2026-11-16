@@ -56,21 +56,21 @@
     "projects": [
       {
         "title": "Evaluating LLM Generated Task Codes (HIPS Paper)",
-        "description": "Evaluating LLM-generated high-performance computing task codes, including runtime performance and scaling behavior across thread counts.",
+        "description": "Evaluating LLM-generated high-performance computing task codes, including runtime performance, pass@k, and strong scaling behavior.",
         "image": "images/hips-paper.png",
         "linkLabel": "View Paper",
         "url": "https://mprobson.github.io/files/ParEval_AMT_HIPS_2026.pdf"
       },
       {
         "title": "Undergrad Honors Thesis: How Well Can LLMs Generate and Translate Code to Asynchronous Many-Task Runtimes?",
-        "description": "An investigation of large language models for generating and translating code to asynchronous many-task runtimes, including analysis of compilation, syntax, type, linker, and runtime errors.",
+        "description": "An investigation of large language models in genrating AMT code, for both single-function and repository-scale tasks.",
         "image": "images/honors-thesis.png",
         "linkLabel": "View Thesis",
         "url": "https://drive.google.com/file/d/13wiNY6Glp0e6gn9eXUMUGQnGJZjOb3pL/view?usp=sharing"
       },
       {
         "title": "Encoding Essential Features in Protein Structure for Task Generalization (Rosetta Commons Poster)",
-        "description": "Exploring protein structure representation learning using graph and point cloud encodings, with an emphasis on feature selection and generalization to downstream prediction tasks.",
+        "description": "Protein structure representation learning using graph and point cloud encodings, alongside feature selection and generalization to downstream function prediction tasks.",
         "image": "images/rosetta-poster.png",
         "linkLabel": "View Poster",
         "url": "https://drive.google.com/file/d/1GDd2VDEn3lOAlsz8HPj1vmfQe2ld3fk3/view?usp=sharing"
